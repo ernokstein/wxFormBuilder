@@ -26,9 +26,9 @@ then
  exit
 else
  outputDir=$1
-fi  
+fi
 
-# Ensure target directories exist  
+# Ensure target directories exist
 if [ ! -d $outputDir ]
 then
   mkdir $outputDir
@@ -41,19 +41,19 @@ if [ ! -d $outputDir/bin ]
 then
   mkdir $outputDir/bin
 fi
-  
+
 if [ ! -d $outputDir/share ]
 then
   mkdir $outputDir/share
   mkdir $outputDir/share/wxformbuilder
 fi
-  
+
 if [ ! -d $outputDir/share/wxformbuilder ]
 then
   mkdir $outputDir/share/wxformbuilder
 fi
 
-# copy ouput files to target directories  
+# copy ouput files to target directories
 cp -R --interactive output/* $outputDir/share/wxformbuilder/
 
 # reorganize target directories
@@ -68,7 +68,7 @@ fi
 if [ -d $outputDir/lib ]
 then
   mv -f $outputDir/share/wxformbuilder/lib/* $outputDir/lib
-  rm - r $outputDir/share/wxformbuilder/lib
+  rm -r $outputDir/share/wxformbuilder/lib
 else
  mv -f $outputDir/share/wxformbuilder/lib $outputDir/
 fi
@@ -79,4 +79,3 @@ then
 fi
 
 exit
-
